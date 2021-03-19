@@ -1,0 +1,287 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+
+}
+body{
+ 
+}
+
+section{
+  width: 100%;
+  height: 100vh;
+}
+.home-section1{
+background: rgb(255, 126, 95, .9);  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, rgb(254, 180, 123, .8), rgb(255, 126, 95, .8));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right,  rgb(254, 180, 123, .6), rgb(255, 126, 95, .6)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #606c88;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+.home-section{
+  background-color: #fff;
+}
+.home-title{
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  background: #00d2ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  
+  padding: 2rem 0 2rem 0;
+
+}
+.asd{
+  color: #fff;
+  background-color: rgba(8, 104, 168, 0.8);
+}
+.difficulty-container{
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0 1rem 0;
+  margin-top: 12rem;
+}
+.difficulty-selection{
+  text-align: center;
+
+}
+.difficulty-selection p, .difficulty-selection select{
+  display: inline-block;
+  margin-left: 1%;
+}
+.difficulty-selection p{
+  font-weight: 500 !important;
+}
+.difficulty-selection select{
+  padding: .2rem .3rem;
+  border: 1px solid rgba(85, 85, 85, .5);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0.3rem 0.3rem .7rem rgba(85, 85, 85, .5);
+}
+.difficulty-selection select:focus{
+  outline: none;
+}
+.play-button-container{
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  margin-top: 1rem;
+}
+.btn-play{
+font-size: 1.4rem;
+}
+.sudoku-progress-container{
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0 1rem 0;
+  margin-top: 12rem;
+  
+}
+.sudoku-progress-bar{
+  border: 1px solid rgba(85, 85, 85, .3);
+  color: #fff;
+  display: inline-block;
+  padding: 1rem 2rem;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0.2rem 0.2rem .7rem rgba(85, 85, 85, .5);
+  background: #3a7bd5;  /* fallback for old browsers */
+
+}
+.sudoku-progress-bar p{
+  display: block;
+  line-height: 2rem;
+  font-weight: 500 !important;
+}
+
+.sudoku-panel{
+  width: 100%;
+}
+.sudoku-panel__sub{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+.sudoku-control-container{
+  padding: 3rem 0;
+}
+.sudoku-control-button-container{
+  width: 435px;
+  float: left;
+  margin-left: 8%;
+}
+.control-btn-row{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.control-btn-row ion-icon, .btn-control p{
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 .3rem;
+}
+.control-info-row{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.control-info-row p{
+  margin-left: 5%;
+}
+.sudoku-table-container{
+  padding: 3rem 0;
+  text-align: center;
+}
+.control-reset-row{
+  width: 100%;
+}
+.control-reset-row .btn-reset p, .control-reset-row ion-icon{
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 .3rem;
+}
+.sudoku-table{
+  float: right;
+  margin-right: 10%;
+ border: 2px solid rgb(255, 126, 95, .9);
+ margin-left: 16%;
+}
+.sudoku-table td{
+  position: relative;
+  width: 45px;
+  padding: 1rem;
+  border: 1px solid rgb(255, 126, 95, .9);
+  font-weight: 600 !important;
+  color: rgba(8, 104, 168, 1);
+}
+.sudoku-table .third-row{
+  border-bottom: 5px solid rgb(255, 126, 95, .9);
+}
+.sudoku-table td:nth-child(3){
+  border-right: 5px solid rgb(255, 126, 95, .9);
+
+}
+.sudoku-table td:nth-child(6){
+  border-right: 5px solid rgb(255, 126, 95, .9);
+}
+.sudoku-table .false{
+  padding: 0 !important;
+}
+.sudoku-table .sudoku-table__input{
+  width: 45px;
+  height: 53px;
+  text-align: center;
+  border: none;
+  font-size: 110%;
+  position: relative;
+}
+.sudoku-table__input:focus{
+  background-color: #eeeeee;
+  outline: none;
+}
+.checktrue{
+  background-color: rgba(204, 37, 37, .5);
+  font-weight: 600 !important;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+}
+.checktrue input{
+  
+  background-color: rgba(211, 118, 118, 0.1);
+  font-weight: 600 !important;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+}
+.note{
+  font-size: 90%;
+  position: absolute;
+  color: #555;
+  z-index: 9000;
+}
+.note1{top: 0;left: 7%} .note2{top: 0;left: 40%} .note3{top: 0;right: 5%} .note4{top: 34%;right: 5%} 
+.note5{bottom: 0;right: 5%} .note6{bottom: 0;left: 40%} .note7{bottom: 0;left: 7%} .note8{top: 34%;left: 7%} .note9{top: 34%;left: 40%}
+
+/*Utils*/
+.btn{
+  padding: .8rem 1.5rem .8rem 1.5rem;
+  font-weight: 600 !important;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  letter-spacing: .05rem;
+  cursor: pointer;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+.btn:hover{
+  transform: scale(1.12);
+  -webkit-transform: scale(1.12);
+  -moz-transform: scale(1.12);
+  -ms-transform: scale(1.12);
+  -o-transform: scale(1.12);
+}
+.btn:focus{
+  outline: none;
+}
+.btn-green{
+  background-color: #26c281;
+  color: white;
+}
+.btn-blue{
+  background-color: #4b77be;
+}
+.btn-orange{
+  background-color: #f27935;
+}
+.btn-orange-shine{
+  box-shadow: 0 0 2.8rem rgb(242, 121, 53)
+}
+.btn-grey{
+  background-color: #6c7a89;
+}
+.btn-control{
+  width: 40%;
+  margin-left: 5%;
+  color: white;
+  
+}
+.btn-reset{
+  width: 85%;
+  margin-left: 5%;
+  color: white;
+}
+.btn-control p{
+  font-weight: 600 !important;
+}
+.btn:disabled,
+.btn[disabled]{
+  opacity: .5;
+}

@@ -1,0 +1,6 @@
+export const REQUEST_SUDOKU = 'REQUEST_SUDOKU'
+export const CREATE_SUDOKU = 'CREATE_SUDOKU'
+export const UPDATE_SUDOKU = 'UPDATE_SUDOKU'
+export const SET_SUDOKU = 'SET_SUDOKU'
+export const NOTE_MODE = 'NOTE_MODE'
+export const RESET_SUDOKU = 'RESET_SUDOKU'
