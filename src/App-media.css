@@ -24,38 +24,36 @@
        .sudoku-table-container{
            position: relative;
             width: 100%;
-            height: 60vh;
-       
+            margin-top: 1rem;
+            padding: 0 0;
+            
        }
        .sudoku-table{
-            position: absolute;
-            float: none;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
-            margin-left: 0;
+       float: none;
+       margin-left: 50%;
+       transform: translateX(-50%);
+       -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+       -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
 }
  
       .sudoku-control-container{
        width: 100%;
        position: relative;
-       height: 20vh;
+       padding: 0;
+       margin-top: 1rem;
+      
+
       }
       .sudoku-control-button-container{
-            position: absolute;
-            float: none;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%, -40%);
-            -webkit-transform: translate(-50%, -40%);
-            -moz-transform: translate(-50%, -40%);
-            -ms-transform: translate(-50%, -40%);
-            -o-transform: translate(-50%, -40%);
-            margin-left: 0;
+        float: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
 }
 }
 
@@ -87,15 +85,31 @@
         width: 38px !important;
         height: 43px !important;
     }
+    .btn-control{
+        width: 30%;
+        margin-left: 10%;
+        color: white;
+        
+      }
+      .btn-reset{
+        width: 75%;
+        margin-left: 10%;
+        color: white;
+      }
+    .btn{
+        padding: .4rem .6rem .4em .6rem;
+    }
+    .control-info-row p{
+        margin-left: 4rem;
+      }
 }
 
 @media only screen and (max-width: 417px) {
     .sudoku-table{
-        top: 45%;
         font-size: 70%;
     }
-    .sudoku-control-button-container{
-        top: 20%;
+    .sudoku-control-container{
+        padding-left: 2rem;
     }
     .sudoku-table td, 
     .sudoku-table__input{
