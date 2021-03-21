@@ -3,7 +3,7 @@ import SudokuContext from '../../context/sudoku/sudokuContext'
 
 const SudokuTable = () => {
     const sudokuContext = useContext(SudokuContext)
-    const {sudoku, updateSudoku, updateSudokuNotes, noteMode} = sudokuContext
+    const {sudoku, updateSudoku, updateSudokuNotes, noteMode, isValid} = sudokuContext
 
     const [tableState, setTableState] = useState({
         numbers: sudoku.getSudoku()
@@ -54,7 +54,7 @@ const SudokuTable = () => {
     }
     return (
         <div className="sudoku-panel__sub sudoku-table-container">
-            <table className="sudoku-table" cellSpacing="0" cellPadding="0">
+            <table className={"sudoku-table sudoku-table-"+isValid} cellSpacing="0" cellPadding="0">
                 <tbody>
                     {
                         numbers.map((row, i) => {
@@ -62,10 +62,11 @@ const SudokuTable = () => {
                             <tr key={i}>
                             {row.map((box, j) => {
                                 return (
-                                    <td className={i%3 == 2 ? 'check'+box.markIncorrect + ' third-row' + ' ' + box.appear : 'check'+box.markIncorrect + ' ' + box.appear} key={j}>
+                                    <td className={i%3 == 2 ? 'check'+box.markIncorrect + ' third-row' + ' ' + box.appear + ' is-valid-'+isValid : 
+                                    'check'+box.markIncorrect + ' ' + box.appear + ' is-valid-'+isValid} key={j}>
                                         {box.appear ? box.value : (
                                             <Fragment>
-                                            <input className={"sudoku-table__input check"} type="text" 
+                                            <input className={"sudoku-table__input check is-valid-"+isValid} type="text" 
                                                    name={box.id} value={box.userInput}
                                                    onChange={(e) => onChange(e, i, j)}/>
                                                     {box.notes.map((note, k) => {

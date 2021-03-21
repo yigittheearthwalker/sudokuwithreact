@@ -162,6 +162,10 @@ font-size: 1.4rem;
  border: 2px solid rgb(255, 126, 95, .9);
  margin-left: 16%;
 }
+
+.is-valid-true{
+  background-color: rgba(91, 192, 65, 0.2) !important;
+}
 .sudoku-table td{
   position: relative;
   width: 45px;

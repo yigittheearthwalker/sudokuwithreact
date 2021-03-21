@@ -25,7 +25,8 @@ const initialState = {
     noteMode: false,
     request: false,
     progress: null,
-    level: null
+    level: null,
+    isValid: false
 }
 
 const [state, dispatch] = useReducer(sudokuReducer, initialState);
@@ -84,17 +85,17 @@ const [state, dispatch] = useReducer(sudokuReducer, initialState);
         }
     }
     const toggleNoteMode = () => {
-        console.log(state.noteMode);
         dispatch({
             type: NOTE_MODE,
             payload: (state.noteMode ? false : true)
         })
     }
     const checkSudoku = () => {
-        let sudoku = sudokuValidator(state.sudoku)
+        let validateResult = sudokuValidator(state.sudoku)
+        
         dispatch({
             type: SET_SUDOKU,
-            payload: sudoku
+            payload: validateResult
         }) 
     }
     const resetSudoku = () => {
@@ -121,6 +122,7 @@ const [state, dispatch] = useReducer(sudokuReducer, initialState);
            noteMode: state.noteMode,
            request: state.request,
            emptyOnes: state.emptyOnes,
+           isValid: state.isValid
         }}
         >
            {props.children}

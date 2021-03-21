@@ -1,10 +1,16 @@
-import React, {useContext}from 'react'
+import React, {useContext, useEffect}from 'react'
 import SudokuContext from '../../context/sudoku/sudokuContext'
 
 const SudokuControl = () => {
     const sudokuContext = useContext(SudokuContext)
     const {lastMove, currentMove, noteMode,sudokuBackOrForward, toggleNoteMode, checkSudoku, emptyOnes, resetSudoku} = sudokuContext
-
+    useEffect(() => {
+       
+        if (emptyOnes == 0) {
+            console.log("Hey loooo");
+            checkSudoku()
+        }
+    }, [emptyOnes])
     return (
         <div className="sudoku-panel__sub sudoku-control-container"> 
             <div className="sudoku-control-button-container">

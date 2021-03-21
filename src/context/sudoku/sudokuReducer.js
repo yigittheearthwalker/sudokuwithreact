@@ -21,7 +21,8 @@ import {
             sudoku: action.payload,
             currentMove: action.payload.moveNumber,
             emptyOnes: action.payload.emptyOnes,
-            request: false
+            request: false,
+            isValid: false
           }
         case UPDATE_SUDOKU:
           return {
@@ -30,13 +31,15 @@ import {
             currentMove: action.payload.sudoku.moveNumber,
             lastMove: action.payload.lastMove,
             emptyOnes: action.payload.sudoku.emptyOnes,
+            isValid: false
           }
         case SET_SUDOKU:
           return {
             ...state,
-            sudoku: action.payload,
-            currentMove: action.payload.moveNumber,
-            emptyOnes: action.payload.emptyOnes
+            sudoku: action.payload[0],
+            currentMove: action.payload[0].moveNumber,
+            emptyOnes: action.payload[0].emptyOnes,
+            isValid: action.payload[1] == false ? true : false
           }
         case NOTE_MODE:
           return {

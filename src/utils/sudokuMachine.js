@@ -37,12 +37,9 @@ const sudokuBuilder = (playLevel) => {
             emptyCounter = resultSetNumberstoShow[0]
             backupNumbers = JSON.parse(JSON.stringify(resultSetNumberstoShow[2]))
             backupShownNumbers = JSON.parse(JSON.stringify(resultSetNumberstoShow[1]))
-            print2(backupShownNumbers)
-            console.log(emptyCounter);
             sudokuCounter = 0
         }
         sudokuCounter++
-        console.log(sudokuCounter);
         if (sudokuCounter == 50) {
             level = level + 1
             sudokuCounter = 0
@@ -420,46 +417,55 @@ const checkIdenticalTwins = (numbers) => {
 
 const sudokuValidator = (sudoku) => {
     let numbers = sudoku.getSudoku()
-    numbers = validateRows(numbers);
-    numbers = validateColumns(numbers)
-    numbers = validateBoxes(numbers)
-    sudoku.setSudoku(numbers)
+    let hasError = false
+    let rowResult = validateRows(numbers);
+    let colResult = validateColumns(numbers)
+    let boxResult = validateBoxes(numbers)
+    if (rowResult[1] || colResult[1] || boxResult[1]) {
+        hasError = true
+    }
     console.log(sudoku);
-    return sudoku
+    return [sudoku, hasError]
 }
 const validateRows = (numbers) => {
+    let hasError = false
     for (let i = 0; i < numbers.length; i++) {
         for (let j = 0; j < numbers[i].length; j++) {
             numbers[i][j].markIncorrect = numbers[i].some((number, x) => number.userInput == numbers[i][j].userInput && x != j && number.userInput !== '')
+            if(numbers[i][j].markIncorrect == true) hasError = true
         }
     }
-    return numbers
+    return [numbers, hasError]
 }
 const validateColumns = (numbers) => {
+    let hasError = false
     for (let i = 0; i < numbers.length; i++) {
         for (let j = 0; j < numbers[i].length; j++) {
             for (let x = 0; x < 9; x++) {
                 if(numbers[i][j].userInput == numbers[x][j].userInput && i != x && numbers[i][j].userInput != ''){
                     numbers[i][j].markIncorrect = true;
+                    hasError = true
                 }
             }
         }
     }
-    return numbers
+    return [numbers, hasError]
 }
 const validateBoxes = (numbers) => {
+    let hasError = false
     for (let i = 0; i < numbers.length; i++) {
         for (let j = 0; j < numbers[i].length; j++) {
             for (let x = 0; x < 3; x++) {
                 for (let y = 0; y < 3; y++) {
                     if (numbers[(i - (i % 3)) + x][(j - (j % 3)) + y].userInput == numbers[i][j].userInput && i != ((i - (i % 3)) + x) && j != ((j - (j % 3)) + y) && numbers[i][j].userInput != '') {
                         numbers[i][j].markIncorrect = true;
+                        hasError = true
                     } 
                 }
             }
         }
     }
-    return numbers
+    return [numbers, hasError]
 }
 
 const finalizeSudoku = (numbers, shownNumbers) => {
